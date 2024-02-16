@@ -14,12 +14,6 @@ class LargeLanguageModel:
             self.model = model
 
         self.messages = []
-        self.add_message("system", "You control a robot with a camera on the end-effector.\\" + 
-                        "Available actions: [A: Pick up item 'X', B: Equip tool 'X'. C: Hand item 'X' to user. D: Move end-effector to view the workbench from a new camera angle. E: Capture image]. \\" + 
-                        "You must select an appropriate sequence of actions according to the user input. \\" + 
-                        "Prompt example: 'Visible items: 1. Hammer 2. Glue 3. Screwdriver 4. Caliper 5. Scissors. Give me a tool to fix this chair, and double-check the workbench for hidden items.' \\" +
-                        "Your reply: 'Sequence of actions: [B(screwdriver),C(screwdriver),D,E] \\" + 
-                        "If no actions are appropriate, return 'None'.\\")
 
     @property
     def chat_messages(self):
@@ -49,8 +43,24 @@ class LargeLanguageModel:
     
 
 # Example usage
-LLM = LargeLanguageModel()
+API_key = None # Replace with your API key if you have one
+LLM = LargeLanguageModel(api_key=API_key)
+"""LLM.add_message("system", "You control a robot with a camera on the end-effector which can be used to scan for items on a workbench.\\" + 
+                        "Available actions: [A: Pick up item 'X' from the workbench, B: Hand item 'X' to the operator. C: Move end-effector to alternative camera angle. D: Capture image]. \\" + 
+                        "You must select an appropriate sequence of actions according to the user input. \\" + 
+                        "Prompt example: 'Visible items on the workbench: 1. Hammer 2. Glue 3. Screwdriver 4. Caliper 5. Scissors. Give me a tool to fix this chair, and double-check the workbench for hidden items.' \\" +
+                        "Reasoning: First, pick up the screwdriver because it can be used to fix the chair. Then, hand it to the operator. Next, move the end-effector to a new position allowing for a new camera angle. Finally, capture an image of the workbench.\\" +
+                        "As such, your reply is: 'Sequence of actions: [A(screwdriver),B(screwdriver),C,D]' \\" + 
+                        "If no actions apply, return 'None'.")"""
+
+LLM.add_message("system", "You are my assistant and are in control of a robot with a camera mounted on the end-effector. The camera can be used to scan for items on a workbench. \\" +
+                "The robot is able to perform the following actions: [A: Pick up item 'X' from the workbench. B: Give item 'X' to the operator. C: Equip item 'X'. D: Move end-effector to view workbench from new camera angle. E: Capture image from current camera angle].\\" +
+                "I, the operator, will tell you which items are visible on the workbench, and provide you with a task that I need done." + 
+                "Your job is to create a sequence of actions from the list above which fullfils the task. \\" +
+                "Your response should formatted as a list of the selected actions, and which items from the workbench you decide to use (if relevant). If no actions apply, return 'None'.")
+
 user_input = input("Enter your request: ")
 message = "Visible items: 1. Hammer 2. Glue 3. Screwdriver 4. Caliper 5. Scissors. " + user_input
 response = LLM.generate_response(message)
 print("Generated Response:", response)
+#print("Messages:", LLM.messages)
