@@ -4,9 +4,9 @@ import fiftyone.zoo as foz
 dataset = foz.load_zoo_dataset(
     "open-images-v7",
     split="train",
-    max_samples=1000,
+    max_samples=500,
     seed=52,
-    classes=["Hammer"],
+    classes=["Screwdriver"],
     shuffle=True,
 )
 

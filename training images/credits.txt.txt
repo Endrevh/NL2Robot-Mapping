@@ -121,3 +121,65 @@ Hammer:
 120: el cajon yacht club via Flickr.	Link: flic.kr/p/qJm63X					License: creativecommons.org/licenses/by/2.0/
 121: Robin Hodson via Flickr.		Link: flic.kr/p/6QtfJj					License: creativecommons.org/licenses/by-sa/2.0/
 122: Joe Haupt via Flickr.		Link: flic.kr/p/bzvP9s, image is slightly cropped.	License: creativecommons.org/licenses/by/2.0/
+
+Screwdriver:
+01: Tool Dude8mm via Flickr.		Link: flic.kr/p/2j4XmT4					License: creativecommons.org/licenses/by/2.0/
+02: Robbie Sproule via Flickr.		Link: flic.kr/p/2p8tvp7					License: creativecommons.org/licenses/by/2.0/
+03: Bill Abbott via Flickr.		Link: flic.kr/p/FKKWdm					License: creativecommons.org/licenses/by-sa/2.0/
+04: Paul Cooper via Flickr.		Link: flic.kr/p/deqvcP					License: creativecommons.org/licenses/by-nc/2.0/
+05: 24oranges.nl via Flickr.		Link: flic.kr/p/cF8YjS					License: creativecommons.org/licenses/by-sa/2.0/
+06: Gavin Anderson via Flickr.		Link: flic.kr/p/7StYq6					License: creativecommons.org/licenses/by-sa/2.0/
+07: Tool Dude8mm via Flickr.		Link: flic.kr/p/2j3Gvi5					License: creativecommons.org/licenses/by/2.0/
+08: Jack Sem via Flickr.		Link: flic.kr/p/29YJsQY					License: creativecommons.org/licenses/by/2.0/
+09: solarisgirl via Flickr.		Link: flic.kr/p/CG4Cru					License: creativecommons.org/licenses/by-sa/2.0/
+10: Claire CJS via Flickr.		Link: flic.kr/p/7JQq6Z					License: creativecommons.org/licenses/by-nc-sa/2.0/
+11: Helen Haden via Flickr.		Link: flic.kr/p/Mx8EaF					License: creativecommons.org/licenses/by-nc/2.0/
+12: Richard Harvey via Flickr.		Link: flic.kr/p/2mHcbyD					License: creativecommons.org/licenses/by-nc/2.0/
+13: Robert via Flickr.			Link: flic.kr/p/bCZULj					License: creativecommons.org/licenses/by/2.0/
+14: Linda in Fortuna via Flickr.	Link: flic.kr/p/28A6cqn					License: creativecommons.org/licenses/by-nc/2.0/
+15: Hobvias sudoneighm via Flickr.	Link: flic.kr/p/3taKM					License: creativecommons.org/licenses/by/2.0/
+16: HomeSpot HQ via Flickr.		Link: flic.kr/p/e3oT7B					License: creativecommons.org/licenses/by/2.0/
+17: Emil . via Flickr.			Link: flic.kr/p/awEXPR					License: creativecommons.org/licenses/by-sa/2.0/
+18: Scott Schiller via Flickr.		Link: flic.kr/p/agnLeM					License: creativecommons.org/licenses/by-sa/2.0/
+19: Vu Nguyen via Flickr.		Link: flic.kr/p/dq5Wny					License: creativecommons.org/licenses/by/2.0/
+20: el cajon yacht club via Flickr.	Link: flic.kr/p/GLSLrU					License: creativecommons.org/licenses/by/2.0/
+21: Mark Turnauckas via Flickr.		Link: flic.kr/p/f2Tnr1					License: creativecommons.org/licenses/by/2.0/
+22: Ivy Dawned via Flickr.		Link: flic.kr/p/7kYWoy					License: creativecommons.org/licenses/by-sa/2.0/
+23: Keith via Flickr.			Link: flic.kr/p/sRSEx					License: creativecommons.org/licenses/by-sa/2.0/
+24: Bill Abbott via Flickr.		Link: flic.kr/p/22NRvhW					License: creativecommons.org/licenses/by-sa/2.0/
+25: Kirill Ignatyev via Flickr.		Link: flic.kr/p/26VGV7F					License: creativecommons.org/licenses/by-nc/2.0/
+26: Blake Patterson via Flickr.		Link: flic.kr/p/2iBJwBD					License: creativecommons.org/licenses/by/2.0/
+27: Alan Levine via Flickr.		Link: flic.kr/p/7PYdh9					License: creativecommons.org/publicdomain/zero/1.0/
+28: Michael Styne via Flickr.		Link: flic.kr/p/645aGa					License: creativecommons.org/licenses/by-sa/2.0/
+29: Steve Johnson via Flickr.		Link: flic.kr/p/bQ3obT					License: creativecommons.org/licenses/by/2.0/
+30: Mark Hillary via Flickr.		Link: flic.kr/p/6FHKzV, image is slightly cropped.	License: creativecommons.org/licenses/by/2.0/
+31: Vitaly Shchukin via Flickr.		Link: flic.kr/p/5iUoGJ					License: creativecommons.org/licenses/by-nc/2.0/
+32: j bizzie via Flickr.		Link: flic.kr/p/NhsTiE					License: creativecommons.org/licenses/by/2.0/
+33: Chris Costes via Flickr.		Link: flic.kr/p/7Kh9V4 					License: creativecommons.org/licenses/by/2.0/
+34: el cajon yacht club via Flickr.	Link: flic.kr/p/FBLLLE					License: creativecommons.org/licenses/by/2.0/
+35: Jody Morris via Flickr.		Link: flic.kr/p/8nzTRN					License: creativecommons.org/licenses/by-sa/2.0/
+36: Peter Lindberg via Flickr.		Link: flic.kr/p/4kiyoP					License: creativecommons.org/licenses/by/2.0/
+37: Tony Alter via Flickr.		Link: flic.kr/p/fVt5nM					License: creativecommons.org/licenses/by/2.0/
+38: Ivy Dawned via Flickr.		Link: flic.kr/p/5k9dPj					License: creativecommons.org/licenses/by-sa/2.0/
+39: Connie Posites via Flickr.		Link: flic.kr/p/kfYmtv					License: creativecommons.org/licenses/by-sa/2.0/
+40: Windell Oskay via Flickr.		Link: flic.kr/p/8iuWhk					License: creativecommons.org/licenses/by/2.0/
+41: David Kessler via Flickr.		Link: flic.kr/p/8Bpd6t					License: creativecommons.org/licenses/by-sa/2.0/
+42: Bill Abbott via Flickr.		Link: flic.kr/p/2i9Kmba					License: creativecommons.org/licenses/by-sa/2.0/
+43: Charles & Hudson via Flickr.	Link: flic.kr/p/8Vpafe					License: creativecommons.org/licenses/by-sa/2.0/
+44: Riley via Flickr.			Link: flic.kr/p/rttDFg					License: creativecommons.org/licenses/by/2.0/
+45: J. C. Barros via Flickr.		Link: flic.kr/p/SCdzXc					License: creativecommons.org/licenses/by/2.0/
+46: osseous via Flickr.			Link: flic.kr/p/o5NcHM					License: creativecommons.org/licenses/by/2.0/
+47: CVSoft via Flickr.			Link: flic.kr/p/dftGEf					License: creativecommons.org/licenses/by/2.0/
+48: Quinn Dombrowski via Flickr.	Link: flic.kr/p/q8ycLL					License: creativecommons.org/licenses/by-sa/2.0/
+49: Thomas Timlen via Flickr.		Link: flic.kr/p/fmHyAQ					License: creativecommons.org/licenses/by/2.0/
+50: solarisgirl via Flickr.		Link: flic.kr/p/CG4Cru					License: creativecommons.org/licenses/by-sa/2.0/
+51: Quinn Dombrowski via Flickr.	Link: flic.kr/p/9sbpwL					License: creativecommons.org/licenses/by-sa/2.0/
+52: Rocco Lucia via Flickr.		Link: flic.kr/p/22SYm					License: creativecommons.org/licenses/by/2.0/
+53: Brandon via Flickr.			Link: flic.kr/p/pMtEaZ					License: creativecommons.org/licenses/by/2.0/
+54: Alexey Ivanov via Flickr.		Link: flic.kr/p/oZjcpM					License: creativecommons.org/licenses/by-sa/2.0/
+55: Ryan Forsythe via Flickr.		Link: flic.kr/p/ouzFZ					License: creativecommons.org/licenses/by-sa/2.0/
+56: Eliot Kimber via Flickr.		Link: flic.kr/p/9PjFJe					License: creativecommons.org/licenses/by-nc/2.0/
+57: Tiago Pereira via Flickr.		Link: flic.kr/p/7zzzxZ					License: creativecommons.org/licenses/by-nc/2.0/
+58: home thods via Flickr.		Link: flic.kr/p/RhhD3y					License: creativecommons.org/licenses/by/2.0/
+59: Solarbotics via Flickr.		Link: flic.kr/p/nq1KKi					License: creativecommons.org/licenses/by/2.0/
+60: Matt Seppings via Flickr.		Link: flic.kr/p/GysjP					License: creativecommons.org/licenses/by/2.0/
