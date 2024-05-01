@@ -2,6 +2,41 @@ import fiftyone as fo
 import fiftyone.utils.random as four
 import os
 import shutil
+import re
+
+# Add license to json-file
+def add_license_to_json_file(json_file_path, license_name, license_url):
+    with open(json_file_path, "r") as file:
+        data = file.read()
+        replace_text = '"licenses": []'
+        new_license = '"licenses": [{"url": "'+license_url+'","name": "'+license_name+'"}]'
+        data = data.replace(replace_text, new_license)
+    with open(json_file_path, "w") as file:
+        file.write(data)
+
+# Adjust json-files so that background has ID 0, and the rest of the classes are shifted by 1
+def adjust_IDs_in_json_file(json_file_path, object_categories):
+    n = len(object_categories)
+    with open(json_file_path, "r") as file:
+        data = file.read()
+        # Shift all categories by 1
+        for i in range(n, 0, -1):
+            data = data.replace(f'"id": {i-1}', f'"id": {i}')
+            data = data.replace(f'"category_id": {i-1}', f'"category_id": {i}')
+
+        # Get the categories part of the json-file
+        replace = re.search('"categories": (.*),"images":', data).group(1)
+        
+        # Add background category as ID 0 at the start
+        new = f'[{{"id": 0,"name": "background"}},{replace[1:]}'
+        
+        # Replace the categories part of the json-file
+        data = data.replace(replace, new)
+
+    # Finally, write the updated json-file
+    with open(json_file_path, "w") as file:
+        file.write(data)
+
 
 # Load COCO formatted dataset
 coco_dataset = fo.Dataset.from_dir(
@@ -42,31 +77,6 @@ test_view.export(export_dir=test_export_dir, dataset_type=fo.types.COCODetection
 detected_object_categories = train_view.default_classes
 print("Detected object categories: ", detected_object_categories)
 
-# Adjust json-files so that background has ID 0, and the rest of the classes are shifted by 1. All occurances of the labels in the json-files are adjusted accordingly.
-# Add background, and shift all other classes by 1. Then, find and replace all occurances, start from the back
-def adjust_json_file(json_file_path, object_categories):
-    n = len(object_categories)
-    with open(json_file_path, "r") as file:
-        data = file.read()
-        for i in range(n, 0, -1):
-            data = data.replace(f'"category_id": {i-1}', f'"category_id": {i}')
-            data = data.replace(f'"name": "{object_categories[i-1]}"', f'"name": "{object_categories[i-1]}"')
-
-def adjust_json_file(json_file_path, object_categories):
-    with open(json_file_path, "r") as file:
-        data = file.readlines()
-
-    for i, line in enumerate(data):
-        for j, category in enumerate(object_categories):
-            if category in line:
-                data[i] = line.replace(f'"id": {j+1}', f'"id": {j+1}')
-                data[i] = data[i].replace(f'"name": "{category}"', f'"name": "{category}"')
-                data[i] = data[i].replace(f'"id": {j}', f'"id": {j+1}')
-                data[i] = data[i].replace(f'"name": "{category}"', f'"name": "{category}"')
-
-    with open(json_file_path, "w") as file:
-        file.writelines(data)
-
 # Check how many images from each class are in each dataset
 class_counts_train = {}
 for file in os.listdir(train_export_dir+"\data"):
@@ -98,6 +108,18 @@ detected_object_categories_train = []
 for file in os.listdir(train_export_dir+"\data"):
     filename = os.fsdecode(file)
     for category in object_categories:
-        if category in filename and category not in detected_object_categories_train:
+        if category.lower() in filename.lower() and category not in detected_object_categories_train:
             detected_object_categories_train.append(category)
 print("Detected object categories: ", detected_object_categories_train)
+
+# Add license to json-files
+license_name = "Attribution-ShareAlike 4.0 International"
+license_url = "https://creativecommons.org/licenses/by-sa/4.0/"
+add_license_to_json_file(train_export_dir+"/labels.json", license_name, license_url)
+add_license_to_json_file(val_export_dir+"/labels.json", license_name, license_url)
+add_license_to_json_file(test_export_dir+"/labels.json", license_name, license_url)
+
+# Adjust IDs in json-files
+adjust_IDs_in_json_file(train_export_dir+"/labels.json", object_categories)
+adjust_IDs_in_json_file(val_export_dir+"/labels.json", object_categories)
+adjust_IDs_in_json_file(test_export_dir+"/labels.json", object_categories)
