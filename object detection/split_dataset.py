@@ -38,6 +38,13 @@ def adjust_IDs_in_json_file(json_file_path, object_categories):
         file.write(data)
 
 
+# First, remove unnecessary part of image paths in the result.json file
+with open("hammer_export/result.json", "r") as file:
+    data = file.read()
+    data = data.replace('"file_name": "images\/', '"file_name": "')
+with open("hammer_export/result.json", "w") as file:
+    file.write(data)
+
 # Load COCO formatted dataset
 coco_dataset = fo.Dataset.from_dir(
     dataset_type = fo.types.COCODetectionDataset,
