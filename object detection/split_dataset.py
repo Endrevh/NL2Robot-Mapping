@@ -39,7 +39,6 @@ def adjust_IDs_in_json_file(json_file_path, object_categories):
     with open(json_file_path, "w") as file:
         file.write(data)
 
-
 # First, remove unnecessary part of image paths in the result.json file
 label_studio_export_dir = "LS_export"
 with open(label_studio_export_dir+"/result.json", "r") as file:
@@ -49,6 +48,7 @@ with open(label_studio_export_dir+"/result.json", "w") as file:
     file.write(data)
 
 # Load COCO formatted dataset
+print("Loading dataset from Label Studio export...")
 coco_dataset = fo.Dataset.from_dir(
     dataset_type = fo.types.COCODetectionDataset,
     data_path = label_studio_export_dir+"/images",
@@ -58,7 +58,7 @@ coco_dataset = fo.Dataset.from_dir(
 
 # Verify that the class list for our dataset was imported
 object_categories = coco_dataset.default_classes
-print(object_categories)
+print("Detected object categories in Label Studio export:", object_categories)
 
 # Split the dataset randomly into train, validation, and test sets
 four.random_split(
@@ -79,48 +79,40 @@ if os.path.exists(val_export_dir):
     shutil.rmtree(val_export_dir)
 if os.path.exists(test_export_dir):
     shutil.rmtree(test_export_dir)
-train_view.export(export_dir=train_export_dir, dataset_type=fo.types.COCODetectionDataset)
-val_view.export(export_dir=val_export_dir, dataset_type=fo.types.COCODetectionDataset)
-test_view.export(export_dir=test_export_dir, dataset_type=fo.types.COCODetectionDataset)
 
-# Print the detected object categories
-detected_object_categories = train_view.default_classes
-print("Detected object categories: ", detected_object_categories)
+print("Exporting train dataset to COCO format...")
+train_view.export(export_dir=train_export_dir, dataset_type=fo.types.COCODetectionDataset)
+print("Exporting validation dataset to COCO format...")
+val_view.export(export_dir=val_export_dir, dataset_type=fo.types.COCODetectionDataset)
+print("Exporting test dataset to COCO format...")
+test_view.export(export_dir=test_export_dir, dataset_type=fo.types.COCODetectionDataset)
 
 # Check how many images from each class are in each dataset
 class_counts_train = {}
-for file in os.listdir(train_export_dir+"\data"):
+for file in os.listdir(train_export_dir+"/data"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
             class_counts_train[category] = class_counts_train.get(category, 0) + 1
 
 class_counts_val = {}
-for file in os.listdir(val_export_dir+"\data"):
+for file in os.listdir(val_export_dir+"/data"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
             class_counts_val[category] = class_counts_val.get(category, 0) + 1
 
 class_counts_test = {}
-for file in os.listdir(test_export_dir+"\data"):
+for file in os.listdir(test_export_dir+"/data"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
             class_counts_test[category] = class_counts_test.get(category, 0) + 1
 
 # Print the counts for each class
+print("\n\nNumber of images for each class in each dataset:")
 for category in class_counts_train.keys():
     print(f"{category}: {class_counts_train[category]} in train, {class_counts_val[category]} in val, {class_counts_test[category]} in test")
-
-# Create list of detected object categories in the train dataset
-detected_object_categories_train = []
-for file in os.listdir(train_export_dir+"\data"):
-    filename = os.fsdecode(file)
-    for category in object_categories:
-        if category.lower() in filename.lower() and category not in detected_object_categories_train:
-            detected_object_categories_train.append(category)
-print("Detected object categories: ", detected_object_categories_train)
 
 # Add license to json-files
 license_name = "Attribution-ShareAlike 4.0 International"
