@@ -1,3 +1,5 @@
+# This file takes as input the exported dataset from Label Studio and splits it into train, validation, and test sets, all on COCO format.
+
 import fiftyone as fo
 import fiftyone.utils.random as four
 import os
@@ -39,17 +41,18 @@ def adjust_IDs_in_json_file(json_file_path, object_categories):
 
 
 # First, remove unnecessary part of image paths in the result.json file
-with open("hammer_export/result.json", "r") as file:
+label_studio_export_dir = "LS_export"
+with open(label_studio_export_dir+"/result.json", "r") as file:
     data = file.read()
     data = data.replace('"file_name": "images\/', '"file_name": "')
-with open("hammer_export/result.json", "w") as file:
+with open(label_studio_export_dir+"/result.json", "w") as file:
     file.write(data)
 
 # Load COCO formatted dataset
 coco_dataset = fo.Dataset.from_dir(
     dataset_type = fo.types.COCODetectionDataset,
-    data_path = "hammer_export/images",
-    labels_path = "hammer_export/result.json",
+    data_path = label_studio_export_dir+"/images",
+    labels_path = label_studio_export_dir+"/result.json",
     include_id = True,
 )
 
@@ -67,9 +70,9 @@ val_view = coco_dataset.match_tags("val")
 test_view = coco_dataset.match_tags("test")
 
 # Export the datasets, clean directories if they already exist
-train_export_dir = "hammer_train"
-val_export_dir = "hammer_val"
-test_export_dir = "hammer_test"
+train_export_dir = "train"
+val_export_dir = "val"
+test_export_dir = "test"
 if os.path.exists(train_export_dir):
     shutil.rmtree(train_export_dir)
 if os.path.exists(val_export_dir):
