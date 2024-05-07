@@ -89,21 +89,21 @@ test_view.export(export_dir=test_export_dir, dataset_type=fo.types.COCODetection
 
 # Check how many images from each class are in each dataset
 class_counts_train = {}
-for file in os.listdir(train_export_dir+"/data"):
+for file in os.listdir(train_export_dir+"/images"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
             class_counts_train[category] = class_counts_train.get(category, 0) + 1
 
 class_counts_val = {}
-for file in os.listdir(val_export_dir+"/data"):
+for file in os.listdir(val_export_dir+"/images"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
             class_counts_val[category] = class_counts_val.get(category, 0) + 1
 
 class_counts_test = {}
-for file in os.listdir(test_export_dir+"/data"):
+for file in os.listdir(test_export_dir+"/images"):
     filename = os.fsdecode(file)
     for category in object_categories:
         if category.lower() in filename:
