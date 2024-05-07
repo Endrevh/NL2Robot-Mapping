@@ -250,9 +250,9 @@ Wrench:
 39: Claire and Ed Sutton via Flickr.	Link: flic.kr/p/h1HAVY					License: creativecommons.org/licenses/by-nc-sa/2.0/
 40: Snapshooter46 via Flickr.		Link: flic.kr/p/twWZoH					License: creativecommons.org/licenses/by-nc-sa/2.0/
 41: Felishumanus via Flickr.		Link: flic.kr/p/6eVEB5					License: creativecommons.org/licenses/by-nc-sa/2.0/
-42: Jonathan O'Donnel via Flickr.	Link: flic.kr/p/2o5M7Ws, image is slightly cropped.	License: creativecommons.org/licenses/by-nc-sa/2.0/
+42: Jonathan O'Donnel via Flickr.	Link: flic.kr/p/2o5M7Ws, image has been cropped.	License: creativecommons.org/licenses/by-nc-sa/2.0/
 43: Charlie Rapple via Flickr.		Link: flic.kr/p/9y6V4S					License: creativecommons.org/licenses/by-nc-sa/2.0/
-44: joannetorrance via Flickr.		Link: flic.kr/p/8zS5Jw					License: creativecommons.org/licenses/by-nc-sa/2.0/
+44: Jonathan O'Donnel via Flickr.	Link: flic.kr/p/2o5M7Ws, image has been cropped.	License: creativecommons.org/licenses/by-nc-sa/2.0/
 45: phidauex via Flickr.		Link: flic.kr/p/8UxJ7C					License: creativecommons.org/licenses/by-nc-sa/2.0/
 46: Ali Eminov via Flickr.		Link: flic.kr/p/kjWBJG, image has been cropped.		License: creativecommons.org/licenses/by-nc/2.0/
 47: Tom Magliery via Flickr.		Link: flic.kr/p/j3UqDe					License: creativecommons.org/licenses/by-nc-sa/2.0/
@@ -267,10 +267,10 @@ Wrench:
 56: National Museum of the U.S. Navy via Flickr. 	Link: flic.kr/p/2nKuT8T 		License: creativecommons.org/publicdomain/mark/1.0/
 57: btw55 via Flickr.			Link: flic.kr/p/JQ4Qbw					License: creativecommons.org/licenses/by-nc-sa/2.0/
 58: Dale Harris via Flickr.		Link: flic.kr/p/hKEtwq					License: creativecommons.org/licenses/by-nc-sa/2.0/
-59: simonds4 via Flickr.		Link: flic.kr/p/rz8xPD					License: creativecommons.org/licenses/by-nc/2.0/
+59: simonds4 via Flickr.		Link: flic.kr/p/rz8xPD, image has been cropped.		License: creativecommons.org/licenses/by-nc/2.0/
 60: Paul Cooper via Flickr.		Link: flic.kr/p/deqvcP					License: creativecommons.org/licenses/by-nc/2.0/
 61: Sean Welton via Flickr.		Link: flic.kr/p/9peq27					License: creativecommons.org/licenses/by-nc-sa/2.0/
-62: Emily via Flickr.			Link: flic.kr/p/67HBwg					License: creativecommons.org/licenses/by-nc/2.0/
+62: Emily via Flickr.			Link: flic.kr/p/67HBwg, image has been cropped.		License: creativecommons.org/licenses/by-nc/2.0/
 63: eltpics via Flickr.			Link: flic.kr/p/bACFmm, image is cropped and rotated.	License: creativecommons.org/licenses/by-nc/2.0/
 64: Johnny via Flickr.			Link: flic.kr/p/bEn2Y9, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 65: Johhny via Flickr.			Link: flic.kr/p/7DqEdd, image is slightly rotated.	License: creativecommons.org/licenses/by-nc-sa/2.0/
@@ -287,25 +287,27 @@ Wrench:
 76: Andrew Plumb via Flickr.		Link: flic.kr/p/8Y2cKz					License: creativecommons.org/licenses/by/2.0/
 77: Andrew Plumb via Flickr.		Link: flic.kr/p/8Y5f51					License: creativecommons.org/licenses/by/2.0/
 78: Andrew Plumb via Flickr.		Link: flic.kr/p/8Y5g2q, image is cropped.		License: creativecommons.org/licenses/by/2.0/
-79: Ian Pattinson via Flickr.		Link: flic.kr/p/2h4C4Ea					License: creativecommons.org/licenses/by-nc-sa/2.0/
+79: Ian Pattinson via Flickr.		Link: flic.kr/p/2h4C4Ea, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 80: Snapshooter46 via Flickr.		Link: flic.kr/p/tLc3eH, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
-81: js15k via Flickr.			Link: flic.kr/p/4oSfy6					License: creativecommons.org/licenses/by-nc-sa/2.0/
-82: Howard Dickins via Flickr.		Link: flic.kr/p/dQE17H, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
+81: js15k via Flickr.			Link: flic.kr/p/4oSfy6, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
+82: eltpics via Flickr.		Link: flic.kr/p/bACFmm, image is cropped and rotated.	License: creativecommons.org/licenses/by-nc/2.0/
 83: GeeHock via Flickr.			Link: flic.kr/p/8BFy9e					License: creativecommons.org/licenses/by-nc-sa/2.0/
 84: Tom Rolfe via Flickr.		Link: flic.kr/p/BLgDm, image is rotated and cropped.	License: creativecommons.org/licenses/by-nc/2.0/
-85: Tudor Barker via Flickr.		Link: flic.kr/p/7FXT62					License: creativecommons.org/licenses/by-nc-sa/2.0/
+85: Simon Foot via Flickr.		Link: flic.kr/p/2oU8NXs, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 86: Lars Schwarz via Flickr.		Link: flic.kr/p/aRNdFK					License: creativecommons.org/licenses/by-nc-sa/2.0/
-87: thirtyfootscrew via Flickr.		Link: flic.kr/p/6bPDUF					License: creativecommons.org/licenses/by-nc-sa/2.0/
+87: Simon Foot via Flickr.		Link: flic.kr/p/2oU8NXs, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 88: peterhs64 via Flickr.		Link: flic.kr/p/mSGyri, image is cropped.		License: creativecommons.org/licenses/by-nc/2.0/
-89: Tim White via Flickr.		Link: flic.kr/p/R93AZk					License: creativecommons.org/licenses/by-nc-sa/2.0/
+89: Tim White via Flickr.		Link: flic.kr/p/R93AZk, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 90: Lars Schwarz via Flickr.		Link: flic.kr/p/aRR6R6					License: creativecommons.org/licenses/by-nc-sa/2.0/
 91: Dauvit Alexander via Flickr.	Link: flic.kr/p/7wYWmW					License: creativecommons.org/licenses/by-nc-sa/2.0/
 92: Alf via Flickr.			Link: flic.kr/p/fyCApN, image is cropped.		License: creativecommons.org/licenses/by-nc-sa/2.0/
 93: Time's Up via Flickr.		Link: flic.kr/p/8Uisna					License: creativecommons.org/licenses/by-nc/2.0/
-94: Micah Maziar via Flickr.		Link: flic.kr/p/hjS9H, cropped+some parts erased.	License: creativecommons.org/licenses/by-nc-sa/2.0/
-95: Micah Maziar via Flickr.		Link: flic.kr/p/hjS9H, cropped+some parts erased.	License: creativecommons.org/licenses/by-nc-sa/2.0/
-96: Micah Maziar via Flickr.		Link: flic.kr/p/hjS9H, cropped+some parts erased.	License: creativecommons.org/licenses/by-nc-sa/2.0/
-97: Micah Maziar via Flickr.		Link: flic.kr/p/hjS9H, cropped+some parts erased.	License: creativecommons.org/licenses/by-nc-sa/2.0/
+94: Ali Eminov via Flickr.		Link: flic.kr/p/kjWBJG, image is rotated and cropped.	License: creativecommons.org/licenses/by-nc/2.0/
+95: Ali Eminov via Flickr.		Link: flic.kr/p/kjWBJG, image has been cropped.		License: creativecommons.org/licenses/by-nc/2.0/
+96: Ali Eminov via Flickr.		Link: flic.kr/p/kjWBJG, image has been cropped.		License: creativecommons.org/licenses/by-nc/2.0/
+97: Jonathan O'Donnel via Flickr.	Link: flic.kr/p/2o5M7Ws, image has been cropped.	License: creativecommons.org/licenses/by-nc-sa/2.0/
 98: Lewis Meyer via Flickr.		Link: flic.kr/p/57YinL, cropped+some parts erased.	License: creativecommons.org/licenses/by-nc/2.0/
 99: Durango_Dave via Flickr.		Link: flic.kr/p/E5ypjF					License: creativecommons.org/licenses/by-nc/2.0/
 100: Durango_Dave via Flickr.		Link: flic.kr/p/23JF9tK, image is cropped.		License: creativecommons.org/licenses/by-nc/2.0/
+101: Matt Stocker via Flickr.		Link: flic.kr/p/NptEo, cropped+increased contrast.	License: creativecommons.org/licenses/by-nc/2.0/
+102: Matt Stocker via Flickr.		Link: flic.kr/p/NptEo, cropped+increased contrast.	License: creativecommons.org/licenses/by-nc/2.0/
