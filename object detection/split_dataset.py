@@ -43,7 +43,7 @@ def adjust_IDs_in_json_file(json_file_path, object_categories):
 label_studio_export_dir = "LS_export"
 with open(label_studio_export_dir+"/result.json", "r") as file:
     data = file.read()
-    data = data.replace('"file_name": "images\/', '"file_name": "')
+    data = data.replace('"file_name": "images\\\\', '"file_name": "')
 with open(label_studio_export_dir+"/result.json", "w") as file:
     file.write(data)
 
