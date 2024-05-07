@@ -87,6 +87,11 @@ val_view.export(export_dir=val_export_dir, dataset_type=fo.types.COCODetectionDa
 print("Exporting test dataset to COCO format...")
 test_view.export(export_dir=test_export_dir, dataset_type=fo.types.COCODetectionDataset)
 
+# Rename sub-folders from data to images inside the exported directories
+os.rename(train_export_dir+"/data", train_export_dir+"/images")
+os.rename(val_export_dir+"/data", val_export_dir+"/images")
+os.rename(test_export_dir+"/data", test_export_dir+"/images")
+
 # Check how many images from each class are in each dataset
 class_counts_train = {}
 for file in os.listdir(train_export_dir+"/images"):
