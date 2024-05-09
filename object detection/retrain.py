@@ -13,6 +13,8 @@ def retrain(train_data, validation_data, epochs, batch_size, learning_rate):
         hparams=hparams
     )
 
+    print("Training for epochs=", epochs, ", learning_rate=", learning_rate)
+
     # Train the model
     model = object_detector.ObjectDetector.create(
         train_data=train_data,
@@ -21,10 +23,10 @@ def retrain(train_data, validation_data, epochs, batch_size, learning_rate):
 
     return model
 
-def loop_over_hyperparameters(train_data, validation_data, epochs, learning_rates):
+def loop_over_hyperparameters(train_data, validation_data, epochs_list, learning_rates):
     # Loop over the different combinations of hyperparameters and save results
-    for epochs in range(10, 70, 10):
-        for learning_rate in [0.01, 0.02, 0.04, 0.06, 0.10, 0.15, 0.20, 0.30, 0.50]:
+    for epochs in epochs_list:
+        for learning_rate in learning_rates:
             # Read from training_results.txt to avoid duplicate training
             with open("training_results.txt", "r") as f:
                 skip = False
@@ -43,7 +45,6 @@ def loop_over_hyperparameters(train_data, validation_data, epochs, learning_rate
                     print("Skipped training for this combination of hyperparameters: epochs=", epochs, ", learning_rate=", learning_rate)
                     continue
 
-            print("Training for epochs=", epochs, ", learning_rate=", learning_rate)
             model = retrain(train_data, validation_data, epochs=epochs, batch_size=8, learning_rate=learning_rate)
             loss, coco_metrics = model.evaluate(validation_data, batch_size=4)
             with open("training_results.txt", "a") as f:
