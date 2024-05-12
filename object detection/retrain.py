@@ -23,12 +23,16 @@ def retrain(train_data, validation_data, epochs, batch_size, learning_rate):
 
     return model
 
-def loop_over_hyperparameters(train_data, validation_data, epochs_list, learning_rates):
+def loop_over_hyperparameters(train_data, validation_data, epochs_list, learning_rates, results_file):
+    # If the file does not exist, create it as an empty file
+    with open(results_file, "a") as f:
+        f.write("")
+
     # Loop over the different combinations of hyperparameters and save results
     for epochs in epochs_list:
         for learning_rate in learning_rates:
             # Read from training_results.txt to avoid duplicate training
-            with open("training_results.txt", "r") as f:
+            with open(results_file, "r") as f:
                 skip = False
                 lines = f.readlines()
                 for line in lines:
@@ -64,7 +68,8 @@ learning_rates = [0.01, 0.02, 0.04, 0.06, 0.10, 0.15, 0.20, 0.30, 0.50]
 start = time.time()
 
 # Loop over hyperparameters
-loop_over_hyperparameters(train_data, validation_data, epochs, learning_rates)
+results_file = "training_results.txt"
+loop_over_hyperparameters(train_data, validation_data, epochs, learning_rates, results_file)
 
 end = time.time()
 print(f"Training took {end - start} seconds")
