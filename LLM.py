@@ -53,7 +53,10 @@ LLM.add_message("system", "You are my assistant and are in control of a robot wi
                 "Your response should formatted as a list of the selected actions, and which items from the workbench you decide to use (if relevant). If no actions apply, return 'None'.")
 
 user_input = input("Enter your request: ")
-message = "Visible items: 1. Hammer 2. Glue 3. Screwdriver 4. Caliper 5. Scissors. " + user_input
+#message = "Visible items: 1. Hammer 2. Glue 3. Screwdriver 4. Caliper 5. Scissors. " + user_input
+message = "Visible items: 1: Tie. 2: Frisbee. 3: Bottle. 4: Fork. 5: Knife. 6: Scissors. 7: Toothbrush. " + user_input
+#message = "Visible items: 1: Tie. 2: Frisbee. 3: Bottle. 4: Scissors. 5: Toothbrush. " + user_input
+
 response = LLM.generate_response(message)
 print("Generated Response:", response)
 #print("Messages:", LLM.messages)
