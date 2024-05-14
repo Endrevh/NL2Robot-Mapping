@@ -14,7 +14,7 @@ config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 pipeline.start(config)
 
 # Directory where the images and poses will be saved
-save_directory = "scene_images_items"
+save_directory = "scene_images_test"
 os.makedirs(save_directory, exist_ok=True)
 
 # Function to save the color image from the camera
@@ -24,7 +24,7 @@ def save_color_image(frame, iteration):
     print(f"Image saved: {img_name}")
 
 # Main loop
-for i in range(6,7):
+for i in range(3):
     # Wait for Enter press
     input(f"Press Enter to capture. Number of images captured: {i}")
     
