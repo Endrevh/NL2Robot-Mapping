@@ -13,6 +13,7 @@ opencv-python = "^4.9.0.80"
 ur-rtde = "^1.5.7"
 mediapipe = "^0.10.14"
 openai = "1.29.0"
+pillow = "^10.3.0"
 
 
 [build-system]
