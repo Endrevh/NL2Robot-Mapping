@@ -7,7 +7,9 @@ import os
 import numpy as np
 import cv2
 import base64
-import openai
+from openai import OpenAI
+
+client = OpenAI()
 
 # Initialize camera
 def initialize_camera(frequency):
@@ -15,7 +17,7 @@ def initialize_camera(frequency):
     config = rs.config()
     config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, frequency)
     config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, frequency)
-    
+
     try:
         # Start the pipeline
         pipeline.start(config)
@@ -31,7 +33,7 @@ def initialize_robot(robot_ip_address):
     # Connect to robot
     rtde_c = rtde_control.RTDEControlInterface(robot_ip_address)
     rtde_r = rtde_receive.RTDEReceiveInterface(robot_ip_address)
-    
+
     return rtde_c, rtde_r
 
 # Load calibration data
@@ -42,7 +44,7 @@ def load_calibration_data(calibration_folder):
         dist_coeffs = np.loadtxt(file, delimiter=' ')
     with open(os.path.join(calibration_folder, "hand_eye_transformation.txt"), 'r') as file:
         hand_eye_transformation = np.loadtxt(file, delimiter=' ')
-    
+
     return camera_matrix, dist_coeffs, hand_eye_transformation
 
 def generate_tasks(language_model, pipeline):
@@ -50,10 +52,10 @@ def generate_tasks(language_model, pipeline):
 
     # Capture image of worktable
     image = capture_image(pipeline)
-    
+
     # Detect objects on workbench
     objects = detect_objects(image)
-    
+
     # Print visible items to console
     print("Visible items:", objects)
     prompt = input("Enter prompt: ")
@@ -61,10 +63,10 @@ def generate_tasks(language_model, pipeline):
     # Generate sequence of tasks using LLM
     sequence = language_model.generate_response(prompt, objects)
     print("Generated sequence:", sequence)
-    
+
     return sequence, objects
-    
-    
+
+
 def capture_image(pipeline):
     # Implement code to capture image from current camera angle
     frames = pipeline.wait_for_frames()
@@ -99,11 +101,11 @@ def detect_objects(image):
 def encode_image_to_base64(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
-    
+
 def detect_and_classify_objects_openai(image_path):
     # Encode image to base64
     image_base64 = encode_image_to_base64(image_path)
-    
+
     # Define the predefined categories
     predefined_categories = ["vehicle", "animal", "furniture", "electronics", "person", "hammer", "screwdriver", "wrench", "frisbee", "fork",
                             "knife", "toothbrush", "tie", "bottle", "scissors"]
@@ -117,7 +119,7 @@ def detect_and_classify_objects_openai(image_path):
             "For each object, provide a bounding box with coordinates in the format (x, y, width, height) along with the object category and confidence score."
         )
     }
-    
+
     # User message with the base64 image
     user_message = {
         "role": "user",
@@ -125,13 +127,11 @@ def detect_and_classify_objects_openai(image_path):
     }
 
     # Call the OpenAI API's chat completions endpoint
-    response = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[system_message, user_message]
-    )
-    
+    response = client.chat.completions.create(model="gpt-4o",
+    messages=[system_message, user_message])
+
     # Extract and print the detected objects
-    output = response['choices'][0]['message']['content']
+    output = response.choices[0].message.content
     print("Objects detected in the image:")
     print(output)
 
@@ -154,7 +154,7 @@ def execute_tasks(sequence, visible_objects, pipeline, rtde_c, rtde_r):
 
             #new_pose_upper = [-0.260, -0.908, 0.633, 0.64, -1.73, 1.85]
             new_pose_lower = [-0.220, -0.564, 0.00205, 0.669, -1.84, 1.78]
-            
+
             #rtde_c.moveL(new_pose_lower, speed, acc, False)
 
         elif action == "B":
@@ -185,7 +185,7 @@ def execute_tasks(sequence, visible_objects, pipeline, rtde_c, rtde_r):
             #rtde_c.moveL(intermediate_pose, speed, acc, False)
             new_pose = [-0.250, -0.815, 0.78, 0.59, -1.56, 1.96]
             #rtde_c.moveL(new_pose, speed, acc, False)
-        
+
         elif action == "E":
             image_rgb = capture_image(pipeline)
 
