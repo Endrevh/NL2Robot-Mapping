@@ -51,7 +51,7 @@ def loop_over_hyperparameters(train_data, validation_data, epochs_list, learning
 
             model = retrain(train_data, validation_data, epochs=epochs, batch_size=8, learning_rate=learning_rate)
             loss, coco_metrics = model.evaluate(validation_data, batch_size=4)
-            with open("training_results.txt", "a") as f:
+            with open(results_file, "a") as f:
                 f.write(f"{epochs},{learning_rate},{coco_metrics['AP']},{loss}\n")
 
 # Load the datasets
@@ -61,26 +61,47 @@ train_data = object_detector.Dataset.from_coco_folder(train_dataset_path, cache_
 validation_data = object_detector.Dataset.from_coco_folder(validation_dataset_path, cache_dir="/tmp/od_data/validation")
 
 # Select hyperparameters for loop_over_hyperparameters
-epochs = [10, 20, 30, 40, 50, 60]
+epochs = [10, 20, 40]
 learning_rates = [0.01, 0.02, 0.04, 0.06, 0.10, 0.15, 0.20, 0.30, 0.50]
 
 # Measure time taken to train the model
 start = time.time()
 
 # Loop over hyperparameters
-results_file = "training_results.txt"
+results_file = "training_results_wrench.txt"
 loop_over_hyperparameters(train_data, validation_data, epochs, learning_rates, results_file)
 
 end = time.time()
 print(f"Training took {end - start} seconds")
 
-# Retrain the model
-# model = retrain(train_data, validation_data, epochs=10, batch_size=8, learning_rate=0.01)
+# Check which model gave the highest AP
+max_ap = 0
+best_lr = None
+best_epochs = None
+with open(results_file, "r") as f:
+    lines = f.readlines()
+    max_ap = 0
+    best_model = None
+    for line in lines:
+        line = line.strip()
+        if line == "":
+            continue
+        epoch = line.split(",")[0]
+        lr = line.split(",")[1]
+        ap = float(line.split(",")[2])
+        if ap > max_ap:
+            max_ap = ap
+            best_lr = lr
+            best_epochs = epoch
+    print(f"Best model: epochs={best_epochs}, learning_rate={best_lr}, AP={max_ap}")
+
+# Retrain the model with the best hyperparameters
+model = retrain(train_data, validation_data, epochs=int(best_epochs), batch_size=8, learning_rate=float(best_lr))
 
 # Evaluate the model
-#loss, coco_metrics = model.evaluate(validation_data, batch_size=4)
-#print(f"Validation loss: {loss}")
-#print(f"Validation coco metrics: {coco_metrics}")
+loss, coco_metrics = model.evaluate(validation_data, batch_size=4)
+print(f"Validation loss: {loss}")
+print(f"Validation coco metrics: {coco_metrics}")
 
 # Export the model
-#model.export_model()
+model.export_model()
