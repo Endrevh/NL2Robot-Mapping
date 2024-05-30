@@ -54,8 +54,8 @@ for idx, fname in enumerate(images):
 
         # Draw and display the corners
         img = cv2.drawChessboardCorners(img, (chessboard_size[0]-1, chessboard_size[1]-1), corners2, ret)
-        cv2.imshow('img', img)
-        cv2.waitKey(5000)
+        #cv2.imshow('img', img)
+        #cv2.waitKey(5000)
 
 cv2.destroyAllWindows()
 
@@ -122,13 +122,15 @@ plt.figure(figsize=(10, 6))
 # Generate a list of indices to use as the x-axis for the scatter plot
 indices = list(i for i in range(1, len(errors) + 1))
 plt.scatter(indices, errors)
-#plt.title('Scatter plot of re-projection errors over all corners')
-plt.xlabel('Image number')
-plt.ylabel('Re-projection error [pixels]')
+plt.title('Scatter plot of re-projection error for each image', fontsize=16)
+plt.xlabel('Image number', fontsize=14)
+plt.ylabel('Re-projection error [pixels]', fontsize=14)
 plt.axhline(y=mean_error, color='b', linestyle='--')
 plt.axhline(y=mean_error + k*std_dev, color='r', linestyle='--')
 plt.axhline(y=mean_error - k*std_dev, color='r', linestyle='--')
 # Add legend for the mean and standard deviation lines
 plt.legend(['Single image error', 'Mean error', 'Mean ± 3*std'])
 plt.xticks(indices)
+plt.grid()
+plt.gca().set_axisbelow(True)
 plt.show()
