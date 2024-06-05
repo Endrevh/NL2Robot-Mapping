@@ -53,8 +53,6 @@ def load_calibration_data(calibration_folder):
     return camera_matrix, dist_coeffs, hand_eye_transformation
 
 def generate_tasks(language_model, pipeline):
-    # Move end effector to initial_position
-
     # Capture image of worktable
     image = capture_image(pipeline)
 
@@ -93,9 +91,8 @@ def capture_image(pipeline):
     # Implement code to capture image from current camera angle
     frames = pipeline.wait_for_frames()
     color_frame = frames.get_color_frame()
-    # Convert image to numpy array and convert to RGB
+    # Convert image to numpy array
     color_image = np.asanyarray(color_frame.get_data())
-    #color_image_rgb = cv2.cvtColor(color_image, cv2.COLOR_BGR2RGB)
 
     return color_image  
 
@@ -220,11 +217,10 @@ def detect_and_classify_objects_openai(image_path):
     #print("JSON response: \n", output_json)
     detections = json.loads(output_json)
     draw_bounding_boxes(image_path_webp, detections)
-
+    
+    # Create list from JSON reply
     labels = [detection['label'] for detection in detections]
     return labels
-
-    # Create list from JSON reply
 
 
 def execute_tasks(sequence, visible_objects, pipeline, rtde_c, rtde_r):
